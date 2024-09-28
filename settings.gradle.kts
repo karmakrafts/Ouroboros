@@ -34,3 +34,4 @@ dependencyResolutionManagement {
 include("ouroboros-runtime")
 include("ouroboros-gradle-plugin")
 include("ouroboros-compiler-plugin")
+include("ouroboros-tests")

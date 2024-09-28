@@ -2,21 +2,23 @@
 ouroboros = "1.0.0"
 
 jvmTarget = "17"
-agp = "8.2.2"
+agp = "8.4.2"
 kotlin = "2.0.10"
 kotlinxCoroutines = "1.9.0"
 androidMinSdk = "28"
 androidCompileSdk = "34"
 core = "1.13.1"
 autoService = "1.1.1"
+multiplatformJni = "1.2.0.22"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 kotlin-compiler = { module = "org.jetbrains.kotlin:kotlin-compiler-embeddable", version.ref = "kotlin" }
 kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 kotlinx-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutines" }
-androidx-core = { group = "androidx.core", name = "core", version.ref = "core" }
+androidx-core = { module = "androidx.core:core", version.ref = "core" }
 autoService-annotations = { module = "com.google.auto.service:auto-service-annotations", version.ref = "autoService" }
+multiplatformJni = { module = "io.karma.jni:multiplatform-jni", version.ref = "multiplatformJni" }
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }

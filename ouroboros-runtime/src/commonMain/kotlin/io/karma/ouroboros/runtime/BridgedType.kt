@@ -14,24 +14,10 @@
  * limitations under the License.
  */
 
-import java.util.Properties
-import kotlin.io.path.div
-import kotlin.io.path.inputStream
+package io.karma.ouroboros.runtime
 
-val buildConfig: Properties = Properties().apply {
-    (rootDir.toPath() / "build.properties").inputStream().use {
-        load(it)
-    }
-}
-
-allprojects {
-    group = buildConfig["group"] as String
-    version = "${rootProject.libs.versions.ouroboros.get()}.${System.getenv("CI_PIPELINE_IID") ?: 0}"
-
-    repositories {
-        mavenLocal()
-        mavenCentral()
-        google()
-        maven("https://git.karmakrafts.dev/api/v4/projects/307/packages/maven") // Mulitplatform JNI
-    }
-}
+@Retention(AnnotationRetention.RUNTIME)
+@Target(AnnotationTarget.CLASS)
+annotation class BridgedType(
+    val name: String
+)
